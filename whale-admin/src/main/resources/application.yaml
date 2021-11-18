@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: whale-admin
+  profiles:
+    active: test
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+# swagger?http://127.0.0.1:21002/swagger-ui/index.html?
+springfox:
+  documentation:
+    enabled: true
+swagger:
+  title: whale-admin
+  description: whale-admin
+  version: 1.4.0.RELEASE
+  base-package: com.whale
+  base-path: /**
+  exclude-path: /error, /ops/**
+  contact:
+    email: xxx@xxx.com
+    name: xxx
+    url: xxx
+  host: xxx
+  license:
+  licenseUrl:
+  termsOfServiceUrl:
+  globalOperationParameters:
+    - name: access_token
+      description: user access token
+      modelRef: string
+      parameterType: header
+      required: true
