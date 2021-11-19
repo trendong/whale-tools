@@ -39,13 +39,20 @@ spring:
         max-wait: -1ms
         min-idle: 0
       shutdown-timeout: 100ms
-  # mongodb配置
   data:
+    # mongodb配置
     mongodb:
       host: 192.168.2.14
       port: 27017
       database: krplus
       authentication-database: admin
+    # elasticsearch配置
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: 192.168.2.13:9200
+          username: elasticsearch_36kr_test
+          password:
   # 邮箱配置
   mail:
     host: smtp.qq.com
@@ -80,15 +87,18 @@ spring:
       # 线程名的前缀，设置之后方便在日志中查看处理任务所在的线程池
       thread-name-prefix: task-
 
-# 服务启动日志-请求路径列表打印
+# 日志
 logging:
   level:
     org:
       springframework:
+        # 服务启动日志-请求路径列表打印
         web:
           servlet:
             mvc:
               method:
                 annotation:
                   RequestMappingHandlerMapping: trace
-
+        data:
+          mongodb:
+            core: DEBUG # 打印 mongodb 操作的具体语句 生产环境下，不建议开启

@@ -6,6 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+/**
+ * 启动类
+ *
+ * @author trendong
+ */
 @EnableAsync
 @EnableScheduling
 @MapperScan("com.whale.admin.web.repository.mapper")
