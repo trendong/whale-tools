@@ -39,6 +39,12 @@ spring:
         max-wait: -1ms
         min-idle: 0
       shutdown-timeout: 100ms
+  # RabbitMQ 配置项，对应 RabbitProperties 配置类
+  rabbitmq:
+    host: 192.168.2.14
+    port: 5672
+    username: 36krplus
+    password: 36krplus
   data:
     # mongodb配置
     mongodb:
@@ -90,6 +96,14 @@ spring:
 # 日志
 logging:
   level:
+    # sql 日志
+    sql: DEBUG
+    # 业务日志配置
+    com:
+      whale:
+        admin:
+          web:
+            controller: DEBUG
     org:
       springframework:
         # 服务启动日志-请求路径列表打印

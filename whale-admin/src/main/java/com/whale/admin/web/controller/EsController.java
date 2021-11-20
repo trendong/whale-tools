@@ -8,6 +8,8 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.aggregations.Aggregation;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.terms.LongTerms;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.ReactiveElasticsearchTemplate;
@@ -34,11 +36,14 @@ import java.util.List;
 @RequestMapping(value = "/es")
 public class EsController {
 
+    private Logger logger = LoggerFactory.getLogger(getClass());
+
     @Resource
     private ReactiveElasticsearchTemplate reactiveElasticsearchTemplate;
 
     @GetMapping("/test")
     public void test() {
+        logger.debug("debug");
         // <1> 创建 ES 搜索条件
         List<IndexBoost> indicesBoost = new ArrayList<>();
         indicesBoost.add(new IndexBoost("product", 1.0f));
