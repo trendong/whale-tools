@@ -1,4 +1,4 @@
-package com.whale.admin.convert;
+package com.whale.admin.web.convert;
 
 import com.whale.admin.web.repository.model.vo.UserBo;
 import com.whale.admin.web.repository.model.vo.UserDetailVo;
