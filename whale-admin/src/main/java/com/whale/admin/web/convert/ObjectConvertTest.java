@@ -24,7 +24,6 @@ public class ObjectConvertTest {
         UserDetailVo convert2 = UserConvert.INSTANCE.convertDetail(userBo);
         System.out.println(convert2);
 
-
     }
     
 }

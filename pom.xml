@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>common-spring-boot-starter</module>
+      <module>whale-framework-plus</module>
   </modules>
 
   <name>whale-tools</name>

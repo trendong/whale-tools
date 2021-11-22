@@ -7,3 +7,6 @@
       * 
     * https://github.com/elunez/eladmin
       * 
+    * https://github.com/YunaiV/ruoyi-vue-pro
+      * 
+    * https://github.com/baomidou/awesome-mybatis-plus
