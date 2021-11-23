@@ -32,13 +32,6 @@ spring:
     port: 6379
     host: 192.168.2.12
     password: 123456
-    lettuce:
-      pool:
-        max-active: 8
-        max-idle: 8
-        max-wait: -1ms
-        min-idle: 0
-      shutdown-timeout: 100ms
   # RabbitMQ 配置项，对应 RabbitProperties 配置类
   rabbitmq:
     host: 192.168.2.14

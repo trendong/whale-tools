@@ -16,9 +16,6 @@ management:
         # 在 include 的基础上，需要排除的端点。通过设置 * ，可以排除所有端点。
         exclude:
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-
 # swagger?http://127.0.0.1:21002/swagger-ui/index.html?
 springfox:
   documentation:
