@@ -2,7 +2,7 @@ spring:
   application:
     name: whale-admin
   profiles:
-    active: test
+    active: dev
 
 # 端点指标监控 http://127.0.0.1:21002/actuator/health
 management:
@@ -41,3 +41,20 @@ swagger:
       modelRef: string
       parameterType: header
       required: true
+
+# Mybatis-plus
+mybatis-plus:
+  global-config:
+    db-config:
+      # 自增 ID
+      id-type: AUTO
+      # 逻辑已删除值(默认为 1)
+      logic-delete-value: 1
+      # 逻辑未删除值(默认为 0)
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:com/whale/framework/repository/mapper/**/*.xml
+  # 扫描model实体对象
+  type-aliases-package: com.whale.framework.repository.model.admin, com.whale.framework.repository.web.admin
+
+  # 日志控制台打印
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

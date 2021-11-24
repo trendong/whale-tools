@@ -1,7 +1,9 @@
-package com.whale.framework.repository.mapper;
+package com.whale.framework.repository.mapper.web;
+
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.whale.framework.repository.model.User;
+import com.whale.framework.repository.model.web.User;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +13,7 @@ import com.whale.framework.repository.model.User;
  * @author trendong
  * @since 2021-11-22
  */
+@Repository("webUserMapper")
 public interface UserMapper extends BaseMapper<User> {
 
 }

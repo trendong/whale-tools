@@ -1,7 +1,8 @@
-package com.whale.framework.repository.model;
+package com.whale.framework.repository.model.web;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 
 /**

@@ -15,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @EnableAsync
 @EnableScheduling
-@MapperScan("com.whale.admin.web.repository.mapper")
+@MapperScan("com.whale.framework.repository.mapper")
 @SpringBootApplication
 public class WhaleAdminApplication {
 

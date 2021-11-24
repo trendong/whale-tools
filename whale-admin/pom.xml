@@ -13,12 +13,28 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>whale-admin</name>
     <description>whale-admin</description>
+
     <properties>
         <java.version>11</java.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <lombok.version>1.18.12</lombok.version>
+        <whale.framework.plus.version>1.0-SNAPSHOT</whale.framework.plus.version>
     </properties>
+
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.whale</groupId>
+            <artifactId>whale-framework-plus</artifactId>
+            <version>${whale.framework.plus.version}</version>
+        </dependency>
 
         <!-- 实现对 Spring AOP 的自动化配置 -->
         <dependency>
@@ -95,12 +111,6 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.1</version>
         </dependency>
 
         <dependency>
