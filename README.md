@@ -10,3 +10,5 @@
     * https://github.com/YunaiV/ruoyi-vue-pro
       * 
     * https://github.com/baomidou/awesome-mybatis-plus
+      * https://www.kancloud.cn/tracy5546/dynamic-datasource/2264611
+    * https://www.hutool.cn/

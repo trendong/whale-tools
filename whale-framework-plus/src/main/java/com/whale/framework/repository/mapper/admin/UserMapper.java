@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * <p>
  *  Mapper 接口
@@ -18,5 +21,13 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("adminUserMapper")
 public interface UserMapper extends BaseMapper<User> {
+
+    /**
+     * 获取自定义用户列表
+     *
+     * @param
+     * @return List<Map<String, Object>>
+     */
+    List<Map<String, Object>> selectUserByWhere();
 
 }

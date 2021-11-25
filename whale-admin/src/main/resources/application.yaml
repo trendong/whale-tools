@@ -54,7 +54,7 @@ mybatis-plus:
       logic-not-delete-value: 0
   mapper-locations: classpath*:com/whale/framework/repository/mapper/**/*.xml
   # 扫描model实体对象
-  type-aliases-package: com.whale.framework.repository.model.admin, com.whale.framework.repository.web.admin
-
-  # 日志控制台打印
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.whale.framework.repository.model.*.*
+  configuration:
+    # 日志控制台打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
