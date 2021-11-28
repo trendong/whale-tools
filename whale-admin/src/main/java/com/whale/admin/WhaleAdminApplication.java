@@ -23,7 +23,7 @@ public class WhaleAdminApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WhaleAdminApplication.class, args);
-        logger.debug("just do it");
+        logger.info("just do it");
     }
 
 }

@@ -5,7 +5,6 @@ import com.whale.framework.repository.common.vo.CommonResult;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -29,7 +28,7 @@ import static com.whale.framework.repository.common.exception.enums.GlobalErrorC
  *
  * @author trendong
  */
-//@RestControllerAdvice
+@RestControllerAdvice
 @AllArgsConstructor
 @Slf4j
 public class GlobalExceptionHandler {
