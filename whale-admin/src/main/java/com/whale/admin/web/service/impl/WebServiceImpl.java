@@ -23,7 +23,7 @@ public class WebServiceImpl extends ServiceImpl<UserMapper, User> implements IWe
     private UserMapper userMapper;
 
     @Override
-    @DS("slave")
+    @DS("slave_1")
     public List<User> getUserList() {
         QueryWrapper queryWrapper = new QueryWrapper();
         List<User> list = userMapper.selectList(queryWrapper);

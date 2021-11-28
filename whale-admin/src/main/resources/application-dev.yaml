@@ -33,9 +33,15 @@ spring:
           username: db-test
           password: 123456
         # 模拟从库，可根据自己需要修改
-        slave:
+        slave_1:
           name: whale-web
           url: jdbc:mysql://192.168.2.14:3306/whale-web
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: db-test
+          password: 123456
+        slave_2:
+          name: whale-dev
+          url: jdbc:mysql://192.168.2.14:3306/whale-dev
           driver-class-name: com.mysql.cj.jdbc.Driver
           username: db-test
           password: 123456
@@ -100,26 +106,26 @@ spring:
       thread-name-prefix: task-
 
 # 日志
-logging:
-  level:
-    # sql 日志
-    sql: DEBUG
-    # 业务日志配置
-    com:
-      whale:
-        admin:
-          web:
-            controller: DEBUG
-    org:
-      springframework:
-        # 服务启动日志-请求路径列表打印
-        web:
-          servlet:
-            mvc:
-              method:
-                annotation:
-                  RequestMappingHandlerMapping: trace
-        data:
-          # 打印 mongodb 操作的具体语句 生产环境下，不建议开启
-          mongodb:
-            core: DEBUG
+#logging:
+#  level:
+#    # sql 日志
+#    sql: DEBUG
+#    # 业务日志配置
+#    com:
+#      whale:
+#        admin:
+#          web:
+#            controller: DEBUG
+#    org:
+#      springframework:
+#        # 服务启动日志-请求路径列表打印
+#        web:
+#          servlet:
+#            mvc:
+#              method:
+#                annotation:
+#                  RequestMappingHandlerMapping: trace
+#        data:
+#          # 打印 mongodb 操作的具体语句 生产环境下，不建议开启
+#          mongodb:
+#            core: DEBUG

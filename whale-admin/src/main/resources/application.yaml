@@ -55,6 +55,6 @@ mybatis-plus:
   mapper-locations: classpath*:com/whale/framework/repository/mapper/**/*.xml
   # 扫描model实体对象
   type-aliases-package: com.whale.framework.repository.model.*.*
-  configuration:
-    # 日志控制台打印
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  configuration:
+#    # 日志控制台打印
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
