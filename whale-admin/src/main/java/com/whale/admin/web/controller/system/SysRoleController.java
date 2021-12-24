@@ -1,8 +1,13 @@
 package com.whale.admin.web.controller.system;
 
+import com.whale.admin.web.controller.system.convert.SysRoleConvert;
 import com.whale.admin.web.controller.system.vo.SysRoleCreateReqVO;
+import com.whale.admin.web.controller.system.vo.SysRoleRespVO;
+import com.whale.admin.web.controller.system.vo.SysRoleUpdateReqVO;
+import com.whale.admin.web.controller.system.vo.SysRoleUpdateStatusReqVO;
 import com.whale.admin.web.service.system.ISysRoleService;
 import com.whale.framework.repository.common.vo.CommonResult;
+import com.whale.framework.repository.model.krplus.SysRole;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -34,40 +39,41 @@ public class SysRoleController {
         return success(iSysRoleService.createRole(reqVO));
     }
 
-//    @PutMapping("/update")
-//    @ApiOperation("修改角色")
-//    public CommonResult<Boolean> updateRole(@Valid @RequestBody SysRoleUpdateReqVO reqVO) {
-//        iSysRoleService.updateRole(reqVO);
-//        return success(true);
-//    }
-//
-//    @PutMapping("/update-status")
-//    @ApiOperation("修改角色状态")
-//    public CommonResult<Boolean> updateRoleStatus(@Valid @RequestBody SysRoleUpdateStatusReqVO reqVO) {
-//        iSysRoleService.updateRoleStatus(reqVO.getId(), reqVO.getStatus());
-//        return success(true);
-//    }
-//
-//    @DeleteMapping("/delete")
-//    @ApiOperation("删除角色")
-//    @ApiImplicitParam(name = "id", value = "角色编号", required = true, example = "1024", dataTypeClass = Long.class)
-//    public CommonResult<Boolean> deleteRole(@RequestParam("id") Long id) {
-//        iSysRoleService.deleteRole(id);
-//        return success(true);
-//    }
-//
-//    @GetMapping("/get")
-//    @ApiOperation("获得角色信息")
-//    public CommonResult<SysRoleRespVO> getRole(@RequestParam("id") Long id) {
-//        SysRoleDO role = iSysRoleService.getRole(id);
-//        return success(SysRoleConvert.INSTANCE.convert(role));
-//    }
-//
+    @PutMapping("/update")
+    @ApiOperation("修改角色")
+    public CommonResult<Boolean> updateRole(@Valid @RequestBody SysRoleUpdateReqVO reqVO) {
+        iSysRoleService.updateRole(reqVO);
+        return success(true);
+    }
+
+    @PutMapping("/update-status")
+    @ApiOperation("修改角色状态")
+    public CommonResult<Boolean> updateRoleStatus(@Valid @RequestBody SysRoleUpdateStatusReqVO reqVO) {
+        iSysRoleService.updateRoleStatus(reqVO.getId(), reqVO.getStatus());
+        return success(true);
+    }
+
+    @DeleteMapping("/delete")
+    @ApiOperation("删除角色")
+    @ApiImplicitParam(name = "id", value = "角色编号", required = true, example = "1024", dataTypeClass = Long.class)
+    public CommonResult<Boolean> deleteRole(@RequestParam("id") Long id) {
+        iSysRoleService.deleteRole(id);
+        return success(true);
+    }
+
+    @GetMapping("/get")
+    @ApiOperation("获得角色信息")
+    public CommonResult<SysRoleRespVO> getRole(@RequestParam("id") Long id) {
+        SysRole role = iSysRoleService.getRole(id);
+        return success(SysRoleConvert.INSTANCE.convert(role));
+    }
+
 //    @GetMapping("/page")
 //    @ApiOperation("获得角色分页")
 //    public CommonResult<PageResult<SysRoleDO>> getRolePage(SysRolePageReqVO reqVO) {
 //        return success(iSysRoleService.getRolePage(reqVO));
 //    }
+
 //
 //    @GetMapping("/list-all-simple")
 //    @ApiOperation(value = "获取角色精简信息列表", notes = "只包含被开启的角色，主要用于前端的下拉选项")

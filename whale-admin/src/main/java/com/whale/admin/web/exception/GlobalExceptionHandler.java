@@ -5,6 +5,7 @@ import com.whale.framework.repository.common.vo.CommonResult;
 import io.github.resilience4j.ratelimiter.RequestNotPermitted;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -87,6 +88,17 @@ public class GlobalExceptionHandler {
     public CommonResult<?> missingServletRequestParameterExceptionHandler(MissingServletRequestParameterException ex) {
         log.warn("[missingServletRequestParameterExceptionHandler]", ex);
         return CommonResult.error(BAD_REQUEST.getCode(), String.format("请求参数缺失:%s", ex.getParameterName()));
+    }
+
+    /**
+     * 处理 SpringMVC 请求参数类型错误
+     *
+     * 例如说，对象里某个属性类型为 Integer，结果传递 xx 参数类型为 String
+     */
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public CommonResult<?> httpMessageNotReadableException(HttpMessageNotReadableException ex) {
+        log.warn("[httpMessageNotReadableException]", ex);
+        return CommonResult.error(BAD_REQUEST.getCode(), String.format("请求参数类型错误:%s", ex.getMessage()));
     }
 
     /**

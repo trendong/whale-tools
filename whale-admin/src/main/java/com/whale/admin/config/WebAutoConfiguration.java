@@ -1,7 +1,5 @@
 package com.whale.admin.config;
 
-import com.whale.admin.web.exception.GlobalExceptionHandler;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
@@ -12,7 +10,7 @@ public class WebAutoConfiguration implements WebMvcConfigurer {
 
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer) {
-        configurer.addPathPrefix("/*/*", clazz ->
+        configurer.addPathPrefix("/*", clazz ->
                 clazz.isAnnotationPresent(RestController.class)
                         && clazz.getPackage().getName().startsWith("com.whale.admin.web")); // 仅仅匹配 controller 包
         WebMvcConfigurer.super.configurePathMatch(configurer);

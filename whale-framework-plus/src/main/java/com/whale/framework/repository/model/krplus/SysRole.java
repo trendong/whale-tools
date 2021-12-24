@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 /**
  * <p>
@@ -48,7 +49,7 @@ public class SysRole implements Serializable {
     /**
      * 数据范围(指定部门数组)
      */
-    private String dataScopeDeptIds;
+    private Set<Long> dataScopeDeptIds;
 
     /**
      * 角色状态（0正常 1停用）
@@ -131,16 +132,17 @@ public class SysRole implements Serializable {
         this.dataScope = dataScope;
     }
 
-    public String getDataScopeDeptIds() {
-        return dataScopeDeptIds;
-    }
-
-    public void setDataScopeDeptIds(String dataScopeDeptIds) {
-        this.dataScopeDeptIds = dataScopeDeptIds;
-    }
 
     public Integer getStatus() {
         return status;
+    }
+
+    public Set<Long> getDataScopeDeptIds() {
+        return dataScopeDeptIds;
+    }
+
+    public void setDataScopeDeptIds(Set<Long> dataScopeDeptIds) {
+        this.dataScopeDeptIds = dataScopeDeptIds;
     }
 
     public void setStatus(Integer status) {
