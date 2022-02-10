@@ -15,8 +15,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @EnableAsync
 @EnableScheduling
-@MapperScan("com.whale.framework.repository.mapper")
-@SpringBootApplication
+@MapperScan(value = {"com.whale.framework.repository.mapper"})
+@SpringBootApplication(scanBasePackages="com.whale.*")
 public class WhaleAdminApplication {
 
     private static Logger logger = LoggerFactory.getLogger(WhaleAdminApplication.class);

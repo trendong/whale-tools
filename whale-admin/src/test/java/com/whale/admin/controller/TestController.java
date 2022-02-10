@@ -1,7 +1,7 @@
 //package com.whale.admin.controller;
 //
-//import com.whale.admin.web.repository.mapper.UserMapper;
-//import com.whale.admin.web.service.IUserService;
+//import com.whale.admin.web.system.repository.mapper.UserMapper;
+//import com.whale.admin.web.system.service.IUserService;
 //import lombok.extern.slf4j.Slf4j;
 //import org.junit.Assert;
 //import org.junit.Before;
@@ -11,7 +11,7 @@
 //import org.springframework.boot.test.context.SpringBootTest;
 //import org.springframework.test.annotation.Rollback;
 //import org.springframework.test.context.junit4.SpringRunner;
-//import com.whale.admin.web.repository.model.User;
+//import com.whale.admin.web.system.repository.model.User;
 //import java.util.List;
 //
 //@Slf4j

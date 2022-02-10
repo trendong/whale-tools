@@ -19,9 +19,23 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <lombok.version>1.18.12</lombok.version>
         <whale.framework.plus.version>1.0-SNAPSHOT</whale.framework.plus.version>
+        <easyexcel.verion>2.2.7</easyexcel.verion>
+        <skywalking.version>8.7.0</skywalking.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-logback-1.x</artifactId>
+            <version>${skywalking.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>${easyexcel.verion}</version>
+        </dependency>
 
         <dependency>
             <groupId>io.github.resilience4j</groupId>
@@ -52,19 +66,19 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <exclusions>
-                <!-- 去掉对 spring-boot-starter-logging 的依赖-->
+            <!--<exclusions>
+                &lt;!&ndash; 去掉对 spring-boot-starter-logging 的依赖&ndash;&gt;
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,4 +1,4 @@
-//package com.whale.admin.web.exception;
+//package com.whale.admin.web.system.exception;
 //
 ///**
 // * 自定义异常类
