@@ -79,9 +79,6 @@ public class SysRoleController {
     @GetMapping("/page")
     @ApiOperation("获得角色分页")
     public CommonResult<PageResult<SysRole>> getRolePage(SysRolePageReqVO reqVO) {
-        if (true) {
-            throw new UnsupportedOperationException("暂不支持，也不需要");
-        }
         logger.info("获得角色分页: {}", JsonUtils.toJsonString(reqVO));
         return success(iSysRoleService.getRolePage(reqVO));
     }

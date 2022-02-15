@@ -1,8 +1,11 @@
 package com.whale.framework.repository.model.krplus;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.whale.framework.mybatis.core.type.JsonLongSetTypeHandler;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -49,6 +52,9 @@ public class SysRole implements Serializable {
     /**
      * 数据范围(指定部门数组)
      */
+    @TableField(
+            typeHandler = JsonLongSetTypeHandler.class
+    )
     private Set<Long> dataScopeDeptIds;
 
     /**

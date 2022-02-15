@@ -10,6 +10,7 @@ spy.log
 *.iws
 *.iml
 *.ipr
+log.*
 ### STS ###
 .apt_generated
 .classpath
