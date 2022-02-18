@@ -1,7 +1,7 @@
-package com.whale.framework.dict.util;
+package com.whale.framework.dict.core.util;
 
-import com.whale.framework.dict.dto.DictDataRespDTO;
-import com.whale.framework.dict.service.DictDataFrameworkService;
+import com.whale.framework.dict.core.dto.DictDataRespDTO;
+import com.whale.framework.dict.core.service.DictDataFrameworkService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,6 +1,6 @@
-package com.whale.framework.dict.service;
+package com.whale.framework.dict.core.service;
 
-import com.whale.framework.dict.dto.DictDataRespDTO;
+import com.whale.framework.dict.core.dto.DictDataRespDTO;
 
 import java.util.List;
 

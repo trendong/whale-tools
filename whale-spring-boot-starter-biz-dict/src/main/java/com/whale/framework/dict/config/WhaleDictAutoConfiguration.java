@@ -1,7 +1,7 @@
-package com.whale.framework.dict;
+package com.whale.framework.dict.config;
 
-import com.whale.framework.dict.service.DictDataFrameworkService;
-import com.whale.framework.dict.util.DictFrameworkUtils;
+import com.whale.framework.dict.core.service.DictDataFrameworkService;
+import com.whale.framework.dict.core.util.DictFrameworkUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

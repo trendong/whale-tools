@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.whale.framework.dict.WhaleDictAutoConfiguration
+  com.whale.framework.dict.config.WhaleDictAutoConfiguration

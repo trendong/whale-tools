@@ -12,13 +12,20 @@
   <modules>
     <module>common-spring-boot-starter</module>
     <module>whale-spring-boot-starter-biz-dict</module>
+    <module>whale-spring-boot-stater-biz-operatelog</module>
+    <module>whale-common</module>
   </modules>
 
   <name>whale-tools</name>
   <url>https://www.example.com</url>
 
   <properties>
+    <whale.common.version>1.0-SNAPSHOT</whale.common.version>
+    <skywalking.version>8.7.0</skywalking.version>
+    <hutool.version>5.6.1</hutool.version>
+    <lombok.version>1.18.12</lombok.version>
     <spring.boot.version>2.5.6</spring.boot.version>
+    <swagger-spring-boot-starter.version>2.0.1.RELEASE</swagger-spring-boot-starter.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -26,6 +33,37 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <!-- 用于生成自定义的 Spring @ConfigurationProperties 配置类的说明文件 -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <version>${spring.boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.whale</groupId>
+        <artifactId>whale-common</artifactId>
+        <version>${whale-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.skywalking</groupId>
+        <artifactId>apm-toolkit-trace</artifactId>
+        <version>${skywalking.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.spring4all</groupId>
+        <artifactId>swagger-spring-boot-starter</artifactId>
+        <version>${swagger-spring-boot-starter.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
