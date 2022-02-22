@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 字符串工具类
  *
- * @author 芋道源码
+ * @author trendong
  */
 public class StrUtils {
 

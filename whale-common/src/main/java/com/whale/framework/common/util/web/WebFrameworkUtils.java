@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  * 专属于 web 包的工具类
  *
- * @author 芋道源码
+ * @author trendong
  */
 public class WebFrameworkUtils {
 
