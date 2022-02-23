@@ -20,6 +20,12 @@
   <url>https://www.example.com</url>
 
   <properties>
+    <jackson.core.version>2.11.4</jackson.core.version>
+    <mybatis-plus.version>3.5.1</mybatis-plus.version>
+    <dynamic-datasource.version>3.5.1</dynamic-datasource.version>
+    <guava.version>30.1.1-jre</guava.version>
+    <swagger-annotations.version>1.5.22</swagger-annotations.version>
+    <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
     <whale.common.version>1.0-SNAPSHOT</whale.common.version>
     <skywalking.version>8.7.0</skywalking.version>
     <hutool.version>5.6.1</hutool.version>
@@ -34,6 +40,37 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.core.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>dynamic-datasource-spring-boot-starter</artifactId> <!-- 多数据源 -->
+        <version>${dynamic-datasource.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger-annotations.version}</version>
+      </dependency>
+      <dependency>
         <!-- 用于生成自定义的 Spring @ConfigurationProperties 配置类的说明文件 -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-configuration-processor</artifactId>
@@ -42,7 +79,7 @@
       <dependency>
         <groupId>com.whale</groupId>
         <artifactId>whale-common</artifactId>
-        <version>${whale-common.version}</version>
+        <version>${whale.common.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.skywalking</groupId>
@@ -85,9 +122,4 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <pluginManagement>
-
-    </pluginManagement>
-  </build>
 </project>
