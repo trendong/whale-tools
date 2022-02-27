@@ -26,4 +26,5 @@
 | [Jackson](https://github.com/FasterXML/jackson) | JSON 工具库 | 2.11.4 |  |
 | [MapStruct](https://mapstruct.org/) | Java Bean 转换 | 1.4.1 |
 | [Lombok](https://projectlombok.org/) | 消除冗余的 JavaBean 代码 | 1.18.12 |
-| [Hutool](https://hutool.cn/) | Hutool是一个小而全的Java工具类库 | 5.6.1 |
+| [HuTool](https://hutool.cn/) | Hutool是一个小而全的Java工具类库 | 5.6.1 |
+| [EasyExcel](https://github.com/alibaba/easyexcel) | JAVA解析Excel工具EasyExcel | 2.2.7 |
