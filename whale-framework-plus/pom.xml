@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <artifactId>whale-tools</artifactId>
         <groupId>com.whale</groupId>
@@ -10,21 +9,29 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>whale-spring-boot-starter-biz-dict</artifactId>
+    <artifactId>whale-framework-plus</artifactId>
     <packaging>jar</packaging>
-    <name>${artifactId}</name>
+
+    <properties>
+        <mysql.version>8.0.27</mysql.version>
+    </properties>
 
     <dependencies>
 
+
+
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-            <scope>provided</scope>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
     </dependencies>
