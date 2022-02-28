@@ -5,7 +5,7 @@
 
     <groupId>com.whale</groupId>
     <artifactId>whale-dependencies</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <modelVersion>4.0.0</modelVersion>
@@ -48,23 +48,18 @@
 
             <dependency>
                 <groupId>com.whale</groupId>
-                <artifactId>whale-framework-plus</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <artifactId>whale-common</artifactId>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>com.whale</groupId>
                 <artifactId>whale-spring-boot-starter-biz-dict</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>com.whale</groupId>
                 <artifactId>whale-spring-boot-stater-biz-operatelog</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.whale</groupId>
-                <artifactId>whale-common</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>

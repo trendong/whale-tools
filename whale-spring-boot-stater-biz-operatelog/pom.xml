@@ -5,7 +5,7 @@
     <parent>
         <artifactId>whale-tools</artifactId>
         <groupId>com.whale</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -18,6 +18,7 @@
         <dependency>
             <groupId>com.whale</groupId>
             <artifactId>whale-common</artifactId>
+            <version>${revision}</version>
         </dependency>
 
         <dependency>
