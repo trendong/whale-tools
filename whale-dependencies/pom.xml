@@ -49,17 +49,17 @@
             <dependency>
                 <groupId>com.whale</groupId>
                 <artifactId>whale-common</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.whale</groupId>
                 <artifactId>whale-spring-boot-starter-biz-dict</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.whale</groupId>
                 <artifactId>whale-spring-boot-stater-biz-operatelog</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>

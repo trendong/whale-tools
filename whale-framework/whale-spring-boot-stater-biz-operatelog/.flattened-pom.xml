@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.whale</groupId>
+  <artifactId>whale-spring-boot-stater-biz-operatelog</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>whale-spring-boot-stater-biz-operatelog</name>
+  <url>https://www.example.com/whale-framework/whale-spring-boot-stater-biz-operatelog</url>
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>Release Repository</name>
+      <url>http://nexus.corp.jingdata.com/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Snapshot Repository</name>
+      <url>http://nexus.corp.jingdata.com/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.whale</groupId>
+      <artifactId>whale-common</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <version>2.5.6</version>
+      <scope>provided</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>5.3.12</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-aop</artifactId>
+      <version>2.5.6</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.spring4all</groupId>
+      <artifactId>swagger-spring-boot-starter</artifactId>
+      <version>2.0.1.RELEASE</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>4.0.4</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>

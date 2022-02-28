@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.whale</groupId>
+  <artifactId>whale-framework</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <url>https://www.example.com/whale-framework</url>
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>Release Repository</name>
+      <url>http://nexus.corp.jingdata.com/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Snapshot Repository</name>
+      <url>http://nexus.corp.jingdata.com/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <repositories>
+    <repository>
+      <id>jingdata</id>
+      <name>jingdata</name>
+      <url>http://nexus.corp.jingdata.com/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
+</project>
