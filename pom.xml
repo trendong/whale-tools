@@ -41,6 +41,7 @@
     <module>whale-common</module>
     <module>whale-spring-boot-starter-biz-dict</module>
     <module>whale-spring-boot-stater-biz-operatelog</module>
+      <module>whale-spring-boot-stater-excel</module>
   </modules>
 
   <distributionManagement>
