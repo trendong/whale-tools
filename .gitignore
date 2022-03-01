@@ -11,6 +11,7 @@ spy.log
 *.iml
 *.ipr
 log.*
+.flattened-pom.xml
 ### STS ###
 .apt_generated
 .classpath

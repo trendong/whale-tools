@@ -15,6 +15,10 @@
   <properties>
     <revision>1.0-SNAPSHOT</revision>
 
+    <mapstruct.version>1.4.2.Final</mapstruct.version>
+    <commons-lang3.version>3.12.0</commons-lang3.version>
+    <easyexcel.verion>2.2.7</easyexcel.verion>
+    <resilience4j.version>1.7.0</resilience4j.version>
     <jackson.core.version>2.11.4</jackson.core.version>
     <mybatis-plus.version>3.5.1</mybatis-plus.version>
     <dynamic-datasource.version>3.5.1</dynamic-datasource.version>
@@ -33,39 +37,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-        <version>1.1.0</version>
-        <configuration>
-          <updatePomFile>true</updatePomFile>
-          <flattenMode>oss</flattenMode>
-        </configuration>
-        <executions>
-          <execution>
-            <id>flatten</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>flatten</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>flatten.clean</id>
-            <phase>clean</phase>
-            <goals>
-              <goal>clean</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-
   <modules>
     <module>whale-common</module>
-    <module>whale-dependencies</module>
     <module>whale-spring-boot-starter-biz-dict</module>
     <module>whale-spring-boot-stater-biz-operatelog</module>
   </modules>
@@ -90,19 +63,39 @@
       <dependency>
         <groupId>com.whale</groupId>
         <artifactId>whale-common</artifactId>
-        <version>${project.version}</version>
+        <version>${revision}</version>
       </dependency>
       <dependency>
         <groupId>com.whale</groupId>
         <artifactId>whale-spring-boot-starter-biz-dict</artifactId>
-        <version>${project.version}</version>
+        <version>${revision}</version>
       </dependency>
       <dependency>
         <groupId>com.whale</groupId>
         <artifactId>whale-spring-boot-stater-biz-operatelog</artifactId>
-        <version>${project.version}</version>
+        <version>${revision}</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons-lang3.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.resilience4j</groupId>
+        <artifactId>resilience4j-ratelimiter</artifactId>
+        <version>${resilience4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>easyexcel</artifactId>
+        <version>${easyexcel.verion}</version>
+      </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
@@ -146,6 +139,12 @@
         <version>${skywalking.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.apache.skywalking</groupId>
+        <artifactId>apm-toolkit-logback-1.x</artifactId>
+        <version>${skywalking.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>cn.hutool</groupId>
         <artifactId>hutool-all</artifactId>
         <version>${hutool.version}</version>
@@ -181,5 +180,35 @@
 
     </dependencies>
   </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <configuration>
+          <updatePomFile>true</updatePomFile>
+          <flattenMode>resolveCiFriendliesOnly</flattenMode>
+        </configuration>
+        <executions>
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
