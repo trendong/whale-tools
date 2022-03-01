@@ -76,6 +76,12 @@
         <artifactId>whale-spring-boot-stater-biz-operatelog</artifactId>
         <version>${revision}</version>
       </dependency>
+      <dependency>
+        <groupId>com.whale</groupId>
+        <artifactId>whale-spring-boot-stater-excel</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
 
       <dependency>
         <groupId>org.mapstruct</groupId>
