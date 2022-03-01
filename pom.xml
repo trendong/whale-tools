@@ -9,18 +9,12 @@
   <packaging>pom</packaging>
   <version>${revision}</version>
 
-  <modules>
-    <module>whale-spring-boot-starter-biz-dict</module>
-    <module>whale-spring-boot-stater-biz-operatelog</module>
-    <module>whale-common</module>
-    <module>whale-dependencies</module>
-  </modules>
-
   <name>whale-tools</name>
   <url>https://www.example.com</url>
 
   <properties>
     <revision>1.0-SNAPSHOT</revision>
+
     <jackson.core.version>2.11.4</jackson.core.version>
     <mybatis-plus.version>3.5.1</mybatis-plus.version>
     <dynamic-datasource.version>3.5.1</dynamic-datasource.version>
@@ -38,6 +32,43 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <configuration>
+          <updatePomFile>true</updatePomFile>
+          <flattenMode>oss</flattenMode>
+        </configuration>
+        <executions>
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <modules>
+    <module>whale-common</module>
+    <module>whale-dependencies</module>
+    <module>whale-spring-boot-starter-biz-dict</module>
+    <module>whale-spring-boot-stater-biz-operatelog</module>
+  </modules>
 
   <distributionManagement>
     <repository>
@@ -58,10 +89,94 @@
 
       <dependency>
         <groupId>com.whale</groupId>
-        <artifactId>whale-dependencies</artifactId>
-        <version>${revision}</version>
+        <artifactId>whale-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.whale</groupId>
+        <artifactId>whale-spring-boot-starter-biz-dict</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.whale</groupId>
+        <artifactId>whale-spring-boot-stater-biz-operatelog</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.core.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+        <version>${dynamic-datasource.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger-annotations.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <version>${spring.boot.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.skywalking</groupId>
+        <artifactId>apm-toolkit-trace</artifactId>
+        <version>${skywalking.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.spring4all</groupId>
+        <artifactId>swagger-spring-boot-starter</artifactId>
+        <version>${swagger-spring-boot-starter.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <version>${spring.boot.version}</version>
       </dependency>
 
     </dependencies>
